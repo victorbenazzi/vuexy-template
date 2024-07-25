@@ -3,6 +3,21 @@ import Logo from "../../assets/vuexy-logo.svg";
 import { Icon } from "@iconify/react";
 import MenuItem from "./MenuItem";
 
+interface menuItemDataType {
+  Icon: string;
+  Label: string;
+}
+const menuItemData = [
+  {
+    Icon: "tabler:smart-home",
+    Label: "Dashboard",
+  },
+  {
+    Icon: "tabler:layout-sidebar",
+    Label: "Layouts",
+  },
+];
+
 export function VerticalMenu() {
   return (
     <>
@@ -15,7 +30,9 @@ export function VerticalMenu() {
         />
       </div>
       <ul>
-        <MenuItem IconSimbol="tabler:smart-home" Label="Dashboard" />
+        {menuItemData.map((item: menuItemDataType, index: number) => (
+          <MenuItem IconSimbol={item.Icon} Label={item.Label} key={index} />
+        ))}
       </ul>
     </>
   );
