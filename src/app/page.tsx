@@ -1,7 +1,4 @@
-import Image from "next/image";
-import { Icon } from "@iconify/react";
 import { VerticalMenu } from "@/components/VerticalMenu/VerticalMenu";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 import SearchBar from "@/components/Searchbar/Searchbar";
 
