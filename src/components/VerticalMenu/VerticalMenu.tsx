@@ -7,7 +7,7 @@ interface menuItemDataType {
   Icon: string;
   Label: string;
 }
-const menuItemData = [
+const HeadermenuItemData = [
   {
     Icon: "tabler:smart-home",
     Label: "Dashboard",
@@ -15,6 +15,24 @@ const menuItemData = [
   {
     Icon: "tabler:layout-sidebar",
     Label: "Layouts",
+  },
+];
+const menuItemData = [
+  {
+    Icon: "tabler:shopping-cart",
+    Label: "eCommerce",
+  },
+  {
+    Icon: "tabler:book-2",
+    Label: "Academy",
+  },
+  {
+    Icon: "tabler:truck",
+    Label: "Logistics",
+  },
+  {
+    Icon: "tabler:users",
+    Label: "Users",
   },
 ];
 
@@ -30,6 +48,14 @@ export function VerticalMenu() {
         />
       </div>
       <ul>
+        {HeadermenuItemData.map((item: menuItemDataType, index: number) => (
+          <MenuItem IconSimbol={item.Icon} Label={item.Label} key={index} />
+        ))}
+      </ul>
+      <ul>
+        <span className="px-4 text-[11px] text-neutral-500 leading-[14px] ">
+          APPLICATION
+        </span>
         {menuItemData.map((item: menuItemDataType, index: number) => (
           <MenuItem IconSimbol={item.Icon} Label={item.Label} key={index} />
         ))}
